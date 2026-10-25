@@ -1,0 +1,93 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "YTL",
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#keywords" },
+        { "include": "#entities" },
+        { "include": "#properties" },
+        { "include": "#dates" },
+        { "include": "#numbers" }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.ytl",
+                    "match": "//.*$"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.ytl",
+                    "match": "\\b(from)\\b"
+                }
+            ]
+        },
+        "entities": {
+            "patterns": [
+                {
+                    "name": "entity.name.class.ytl",
+                    "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=\\s*(?:from\\s+[a-zA-Z_][a-zA-Z0-9_]*\\s*)?:)"
+                }
+            ]
+        },
+        "properties": {
+            "patterns": [
+                {
+                    "match": "^[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)\\b(?!\\s*:)",
+                    "captures": {
+                        "1": { "name": "variable.other.property.ytl" }
+                    }
+                }
+            ]
+        },
+        "dates": {
+            "patterns": [
+                {
+                    "name": "constant.other.date.ytl",
+                    "match": "\\b\\d{4}-\\d{2}-\\d{2}(?:[T ]\\d{2}:\\d{2}(?::\\d{2})?)?\\b"
+                },
+                {
+                    "name": "constant.other.date.ytl",
+                    "match": "\\b\\d{1,2}[./]\\d{1,2}[./]\\d{4}\\b"
+                },
+                {
+                    "name": "constant.other.time.ytl",
+                    "match": "\\b\\d{1,2}:\\d{2}(?::\\d{2})?\\b"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.hex.ytl",
+                    "match": "#(?:[A-Fa-f0-9]{8}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{3})\\b"
+                },
+                {
+                    "name": "constant.numeric.hex.ytl",
+                    "match": "\\b0[xX][A-Fa-f0-9]+\\b"
+                },
+                {
+                    "name": "constant.numeric.ytl",
+                    "match": "\\b-?\\d+(\\.\\d+)?\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.ytl",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.ytl",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    },
+    "scopeName": "source.ytl"
+}
