@@ -27,7 +27,7 @@ The table below tracks the current implementation status of the official YTL par
 
 | Programming Language | Parser Status | Package / Repository Link | Planned Version |
 | :--- | :--- | :--- | :--- |
-| **Go (Golang)** | 🟡 *In Development* | Coming Soon | v1.2.0 |
+| **Go (Golang)** | 🟡 *In Development* | https://github.com/Regentq/YTL-GO | v1.2.0 |
 | **Rust** | ❌ *Not Implemented* | N/A | TBD |
 | **Python** | ❌ *Not Implemented* | N/A | TBD |
 | **JavaScript / TS** | ❌ *Not Implemented* | N/A | TBD |
