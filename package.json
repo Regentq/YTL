@@ -2,7 +2,7 @@
   "name": "ytl",
   "displayName": "YTL",
   "description": "YTL (Yggdrasil Template Language) is a new minimalist text format designed for configurations, logs, and declarative data structures. Its defining feature is a tree-like architecture and unique inverted inheritance that completely eliminates code duplication and visual clutter.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "publisher": "Regent",
   "repository": {
     "type": "git",
@@ -39,6 +39,22 @@
                 "settings": { "foreground": "#E5C07B", "fontStyle": "bold" }
           },
           {
+                "scope": "entity.name.tag.level2.ytl",
+                "settings": { "foreground": "#29f57e", "fontStyle": "bold"}
+          },
+          {
+                "scope": "entity.name.tag.level3.ytl",
+                "settings": { "foreground": "#31e9f7", "fontStyle": "bold"}
+          },
+          {
+                "scope": "entity.name.tag.level4.ytl",
+                "settings": { "foreground": "#d83bff", "fontStyle": "bold"}
+          },
+          {
+                "scope": "constant.language.enum.ytl",
+                "settings": { "foreground": "#81a2ff", "fontStyle": "bold"}
+          },
+          {
                 "scope": "keyword.control.ytl",
                 "settings": { "foreground": "#C678DD" }
           },
@@ -69,6 +85,34 @@
           {
                 "scope": "constant.character.escape.ytl",
                 "settings": { "foreground": "#D19A66", "fontStyle": "bold" }
+          },
+          {
+                "scope": "constant.other.network.ip.ytl",
+                "settings": { "foreground": "#acdf5b"}
+          },
+          {
+                "scope": "constant.other.network.url.ytl",
+                "settings": { "foreground": "#00ffbf", "fontStyle": "underline"}
+          },
+          {
+                "scope": "constant.language.boolean.ytl",
+                "settings": { "foreground": "#ff4b81"}
+          },
+          {
+                "scope": "constant.language.null.ytl",
+                "settings": { "foreground": "#ff9100"}
+          },
+          {
+                "scope": "constant.numeric.special.ytl",
+                "settings": { "foreground": "#00e1ff"}
+          },
+          {
+                "scope": [
+                  "constant.numeric.mac.classic.ytl",
+                  "constant.numeric.mac.alternative.ytl",
+                  "constant.numeric.mac.short.ytl"
+                ],
+                "settings": { "foreground": "#4cff9d"}
           }
         ]
       }

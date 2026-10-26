@@ -26,5 +26,14 @@
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
+    ],
+    "onEnterRules": [
+        {
+            "beforeText": "^[ \\t]*[a-zA-Z_][a-zA-Z0-9_]*\\s*:",
+            "dontMatches": "((?://|http|https):)",
+            "action": {
+                "indent": "indent"
+            }
+        }
     ]
 }

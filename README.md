@@ -1,2 +1,54 @@
-# YTL Extension
-Текстовый формат YTL с поддержкой отступов и наследования.
+# YTL Language Support
+
+A powerful VS Code extension providing comprehensive syntax highlighting and deep structural analysis for **YTL (Yugol Token Language)** — a modern, indented data language designed for configuration and object mapping.
+
+## Key Features
+
+- **Robust 5-Level Indentation System:** Accurately parses nested nodes (`level0` through `level4`) using recursive context tracking, completely isolating property keys.
+- **Native Network Primitives:** First-class syntax highlighting for IP addresses, CIDR blocks, and URLs directly inside your code—**without using strings or quotes**.
+- **Hardware Address Detection:** Full support for three standard MAC address formats (`classic`, `alternative`, and `short`).
+- **Comprehensive Chronological Types:** Supports four distinct date and time representations including ISO 8601 (with Zulu time and offsets), RFC 3339, and local calendar schemas.
+- **Collision-Safe System Constants:** Logic literals (`@true`, `@false`), null tokens (`@null`, `@nil`), and calculation states (`@NaN`, `@Inf`) are strictly prefixed with `@` to prevent collisions with variable descriptors.
+- **Advanced Data Patterns:** Native tokens for inheritance mappings (`from` keywords) and custom Enumerations (`enum`).
+
+---
+
+## Language Specification & Code Example
+
+Save your configuration file with the `.ytl` extension. Below is an overview of how your structures look in the editor:
+
+```ytl
+// Entity Declaration with Object Inheritance
+```
+
+<p align="center">
+  <img width="443" height="748" alt="YTL Syntax Preview" src="https://github.com/user-attachments/assets/e5e44571-0eb2-4d03-83d8-cd1826677953" />
+</p>
+
+```ytl
+```
+
+---
+
+## Token Mapping
+
+The parser intelligently maps syntax patterns into distinct semantic tokens:
+
+| Category | Concrete Type | Context Example | TextMate Token Scope |
+| :--- | :--- | :--- | :--- |
+| **Nesting** | Core Classes | `YTL:` | `entity.name.class.ytl` |
+| | Sub-tags / Blocks | `  Level2:` | `entity.name.tag.level2.ytl` |
+| **Properties**| Variables | `  int_value:` | `variable.other.property.ytl` |
+| **Networks** | IP / Subnets | `192.168.1.1` | `constant.other.network.ip.ytl` |
+| | Remote URLs | `https://...` | `constant.other.network.url.ytl` |
+| **Constants** | Boolean Literals | `@true`, `@false` | `constant.language.boolean.ytl` |
+| | Null Pointers | `@null`, `@nil` | `constant.language.null.ytl` |
+| | Special Math | `@NaN`, `@Inf` | `constant.numeric.special.ytl` |
+| **OOP & Data**| Enumerations | `enum` | `constant.language.enum.ytl` |
+| | Control Flows | `from` | `keyword.control.ytl` |
+
+## Installation & Requirements
+
+1. Install the extension in VS Code.
+2. Open or create any file with the extension `.ytl`.
+3. Syntax parsing and token matching will automatically initialize.
