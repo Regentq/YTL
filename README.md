@@ -38,6 +38,20 @@ The parser intelligently maps syntax patterns into distinct semantic tokens:
 | **OOP & Data**| Enumerations | `enum` | `constant.language.enum.ytl` |
 | | Control Flows | `from` | `keyword.control.ytl` |
 
+## Ecosystem & Parser Support
+
+The table below tracks the current implementation status of the official YTL parsers and compilers across different programming languages:
+
+| Programming Language | Parser Status | Package / Repository Link | Planned Version |
+| :--- | :--- | :--- | :--- |
+| **Go (Golang)** | 🟡 *In Development* | Coming Soon | v1.2.0 |
+| **Rust** | ❌ *Not Implemented* | N/A | TBD |
+| **Python** | ❌ *Not Implemented* | N/A | TBD |
+| **JavaScript / TS** | ❌ *Not Implemented* | N/A | TBD |
+| **C++** | ❌ *Not Implemented* | N/A | TBD |
+
+*Want to build a YTL parser for your favorite language? Feel free to open an Issue or submit a Pull Request*
+
 ## Installation & Requirements
 
 1. Install the extension in VS Code.
