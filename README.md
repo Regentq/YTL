@@ -21,6 +21,20 @@ Save your configuration file with the `.ytl` extension. Below is an overview of 
   <img width="443" height="748" alt="photo_2026-10-26_17-43-12" src="https://github.com/user-attachments/assets/b90821af-fa1e-45ef-838f-64adfa3b1ed2" />
 </p>
 
+## Ecosystem & Parser Support
+
+The table below tracks the current implementation status of the official YTL parsers and compilers across different programming languages:
+
+| Programming Language | Parser Status | Package / Repository Link | Planned Version |
+| :--- | :--- | :--- | :--- |
+| **Go (Golang)** | 🟡 *In Development* | Coming Soon | v1.2.0 |
+| **Rust** | ❌ *Not Implemented* | N/A | TBD |
+| **Python** | ❌ *Not Implemented* | N/A | TBD |
+| **JavaScript / TS** | ❌ *Not Implemented* | N/A | TBD |
+| **C++** | ❌ *Not Implemented* | N/A | TBD |
+
+*Want to build a YTL parser for your favorite language? Feel free to open an Issue or submit a Pull Request*
+
 ## Token Mapping
 
 The parser intelligently maps syntax patterns into distinct semantic tokens:
@@ -35,22 +49,8 @@ The parser intelligently maps syntax patterns into distinct semantic tokens:
 | **Constants** | Boolean Literals | `@true`, `@false` | `constant.language.boolean.ytl` |
 | | Null Pointers | `@null`, `@nil` | `constant.language.null.ytl` |
 | | Special Math | `@NaN`, `@Inf` | `constant.numeric.special.ytl` |
-| **OOP & Data**| Enumerations | `enum` | `constant.language.enum.ytl` |
+| **Data**| Enumerations | `enum` | `constant.language.enum.ytl` |
 | | Control Flows | `from` | `keyword.control.ytl` |
-
-## Ecosystem & Parser Support
-
-The table below tracks the current implementation status of the official YTL parsers and compilers across different programming languages:
-
-| Programming Language | Parser Status | Package / Repository Link | Planned Version |
-| :--- | :--- | :--- | :--- |
-| **Go (Golang)** | 🟡 *In Development* | Coming Soon | v1.2.0 |
-| **Rust** | ❌ *Not Implemented* | N/A | TBD |
-| **Python** | ❌ *Not Implemented* | N/A | TBD |
-| **JavaScript / TS** | ❌ *Not Implemented* | N/A | TBD |
-| **C++** | ❌ *Not Implemented* | N/A | TBD |
-
-*Want to build a YTL parser for your favorite language? Feel free to open an Issue or submit a Pull Request*
 
 ## Installation & Requirements
 
