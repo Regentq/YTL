@@ -2,7 +2,8 @@ RU
 
 # YTL Extension
 Текстовый формат YTL с поддержкой отступов и наследования.
-<img width="763" height="252" alt="photo_2026-10-25_20-48-35" src="https://github.com/user-attachments/assets/3af8c665-643b-4964-96f5-cb951bea8378" />
+
+<img width="443" height="748" alt="изображение" src="https://github.com/user-attachments/assets/e5e44571-0eb2-4d03-83d8-cd1826677953" />
 
 # Где скачать расширение?
 Только в VS CODE.
@@ -10,4 +11,3 @@ RU
 В будущем будут на других IDE.
 
 # Пока что ещё нет языка который бы его поддерживал, но я ещё доделываю работу чтобы работало на GO.
-
