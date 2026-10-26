@@ -1,6 +1,6 @@
 # YTL Language Support
 
-A powerful VS Code extension providing comprehensive syntax highlighting and deep structural analysis for **YTL (Yugol Token Language)** — a modern, indented data language designed for configuration and object mapping.
+A powerful VS Code extension providing comprehensive syntax highlighting and deep structural analysis for **YTL (Yggdrasil Template Language)** — a modern, indented data language designed for configuration and object mapping.
 
 ## Key Features
 
