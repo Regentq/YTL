@@ -32,6 +32,8 @@ The table below tracks the current implementation status of the official YTL par
 | **Python** | ❌ *Not Implemented* | N/A | TBD |
 | **JavaScript / TS** | ❌ *Not Implemented* | N/A | TBD |
 | **C++** | ❌ *Not Implemented* | N/A | TBD |
+| **C** | ❌ *Not Implemented* | N/A | TBD |
+| **C#** | ❌ *Not Implemented* | N/A | TBD |
 
 *Want to build a YTL parser for your favorite language? Feel free to open an Issue or submit a Pull Request*
 
