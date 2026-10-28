@@ -1,4 +1,6 @@
 # YTL Language Support
+<img src="icon.jpg" width="96" height="96" align="right" />
+
 
 A powerful VS Code extension providing comprehensive syntax highlighting and deep structural analysis for **YTL (Yggdrasil Template Language)** — a modern, indented data language designed for configuration and object mapping.
 
