@@ -1,4 +1,4 @@
-# YTL Language Support
+# YTL Language Support (1.2.0)
 <img src="icon.jpg" width="96" height="96" align="right" />
 
 
@@ -6,58 +6,65 @@ A powerful VS Code extension providing comprehensive syntax highlighting and dee
 
 ## Key Features
 
-- **Robust 5-Level Indentation System:** Accurately parses nested nodes (`level0` through `level4`) using recursive context tracking, completely isolating property keys.
-- **Native Network Primitives:** First-class syntax highlighting for IP addresses, CIDR blocks, and URLs directly inside your code—**without using strings or quotes**.
-- **Hardware Address Detection:** Full support for three standard MAC address formats (`classic`, `alternative`, and `short`).
-- **Comprehensive Chronological Types:** Supports four distinct date and time representations including ISO 8601 (with Zulu time and offsets), RFC 3339, and local calendar schemas.
-- **Collision-Safe System Constants:** Logic literals (`@true`, `@false`), null tokens (`@null`, `@nil`), and calculation states (`@NaN`, `@Inf`) are strictly prefixed with `@` to prevent collisions with variable descriptors.
-- **Advanced Data Patterns:** Native tokens for inheritance mappings (`from` keywords) and custom Enumerations (`enum`).
+- **Infinite Indentation System:** Seamlessly create new nodes without ever worrying about limit constraints.
+- **Built-in Network Format Recognition:** Instantly detects and parses critical network entities including IPv4, IPv6, MAC addresses, ports, sockets, URLs, and emails.
+- **Multiple Data Inheritance:** Allows merging multiple parent structures simultaneously (e.g., `from Net, Time`), giving you maximum flexibility without code duplication.
+- **Automated Structure Expansion:** Instantly populates inherited properties and nodes from parent structures upon declaration, eliminating manual boilerplate setup.
 
----
 
 ## Language Specification & Code Example
 
 Save your configuration file with the `.ytl` extension. Below is an overview of how your structures look in the editor:
 
-<p align="center">
-  <img width="443" height="748" alt="photo_2026-10-26_17-43-12" src="https://github.com/user-attachments/assets/b90821af-fa1e-45ef-838f-64adfa3b1ed2" />
-</p>
+```puppet
+YTL:
+    name "YTL (Yggdrasil Template Language)"
+    version_id 1.2.0
 
-## Ecosystem & Parser Support
+    Network_base:
+        IPv4[
+            0.0.0.0, 127.0.0.1:80, 0.0.0.0:8080
+        ]
 
-The table below tracks the current implementation status of the official YTL parsers and compilers across different programming languages:
+        IPv6[
+            [::1]:8080, fe80::, 2001:4860:4860::
+        ]
 
-| Programming Language | Parser Status | Package / Repository Link | Planned Version |
+        CIDR    0.0.0.0/0, ::/0
+        URI     127.0.0.1:8000
+        URL     http://0.0.0.0
+        MAC     00:1A:2B:3C:4D:5E, 00-1A-2B-3C-4D-5E, 001A.2B3C.4D5E
+
+    Date:
+        ISO_ZULU_Time   2026-10-26T19:50:47Z
+        RFC_OFFSET_Time 2026-10-26T14:20:00+03:30
+        Local_calendar  2026-10-26
+        Time            14.5s
+```
+
+Inheritance Example:
+
+
+```puppet
+Date:
+    Time 2026-11-26T14:30
+    Time2 1995-06-21
+
+Date2 from Date:
+Date2:
+    Time 2021-11-26T14:10
+    Time2 1999-01-10
+```
+
+## Implementations
+
+| Language | Repo | v1.2.0 | Remarks |
 | :--- | :--- | :--- | :--- |
-| **Go (Golang)** | 🟡 *In Development* | https://github.com/Regentq/YTL-GO | v1.2.0 |
-| **Rust** | ❌ *Not Implemented* | N/A | TBD |
-| **Python** | ❌ *Not Implemented* | N/A | TBD |
-| **JavaScript / TS** | ❌ *Not Implemented* | N/A | TBD |
-| **C++** | ❌ *Not Implemented* | N/A | TBD |
-| **C** | ❌ *Not Implemented* | N/A | TBD |
-| **C#** | ❌ *Not Implemented* | N/A | TBD |
+| **Go** | https://github.com/Regentq/YTL-GO | ✔️ | WIP |
+| **C** | *Not implemented* | N/A | N/A |
+| **C++** | *Not implemented* | N/A | N/A |
+| **C#** | *Not implemented* | N/A | N/A |
 
-*Want to build a YTL parser for your favorite language? Feel free to open an Issue or submit a Pull Request*
+### Contributing
 
-## Token Mapping
-
-The parser intelligently maps syntax patterns into distinct semantic tokens:
-
-| Category | Concrete Type | Context Example | TextMate Token Scope |
-| :--- | :--- | :--- | :--- |
-| **Nesting** | Core Classes | `YTL:` | `entity.name.class.ytl` |
-| | Sub-tags / Blocks | `  Level2:` | `entity.name.tag.level2.ytl` |
-| **Properties**| Variables | `  int_value:` | `variable.other.property.ytl` |
-| **Networks** | IP / Subnets | `192.168.1.1` | `constant.other.network.ip.ytl` |
-| | Remote URLs | `https://...` | `constant.other.network.url.ytl` |
-| **Constants** | Boolean Literals | `@true`, `@false` | `constant.language.boolean.ytl` |
-| | Null Pointers | `@null`, `@nil` | `constant.language.null.ytl` |
-| | Special Math | `@NaN`, `@Inf` | `constant.numeric.special.ytl` |
-| **Data**| Enumerations | `enum` | `constant.language.enum.ytl` |
-| | Control Flows | `from` | `keyword.control.ytl` |
-
-## Installation & Requirements
-
-1. Install the extension in VS Code.
-2. Open or create any file with the extension `.ytl`.
-3. Syntax parsing and token matching will automatically initialize.
+You can become a part of the YTL development team simply by finding bugs and submitting them! Feel free to open an issue or submit a pull request if you want to help improve the YTL syntax or its parser implementations :)
